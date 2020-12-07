@@ -8,7 +8,7 @@
 
 [Create React App y Tipos de Componentes](#Create-React-App-y-Tipos-de-Componentes)
 
-[]()
+[JSX: JavaScript + HTML](#JSX:-JavaScript-+-HTML)
 
 []()
 
@@ -211,6 +211,162 @@ En la carpeta **components** crear otro archivo que se llame **Presentational.js
 El componente Presentacional es aquel que tiene una parte muy particular de html que se va a ver en el navegador, no tiene logica, no trae propiedades.
 
 Los 3 componentes principales que se usaran en el curso seran **Stateful**, **Stateless** y **Presentational**
+
+<div align="right">
+  <small><a href="#tabla-de-contenido">🡡 volver al inicio</a></small>
+</div>
+
+## JSX: JavaScript + HTML
+
+Estamos acostumbrados a escribir código HTML en archivos .html y la lógica de JavaScript en archivos .js.
+
+React usa JSX: una sintaxis que nos permite escribir la estructura HTML y la lógica en JavaScript desde un mismo lugar: nuestros componentes.
+
+Para esto se va a crear un nuevo componente para empezar a trabajar con JSX, dentro del archivo **components**, crear un nuevo archivo que se llamara **HolaMundo.jsx**, la extension jsx permite que el editor de texto reconozca que se esta trabajando con JavaScript y particularmente que se esta usando react
+
+1. Importar React `import React from 'react';`
+
+2. Se crea un componente presentacional donde se van a añadir mas elementos que los de la clase pasada en la seccion del return.
+
+3. Crear una costante HolaMundo la cual recibe un Arrow Function `const HolaMundo = () => {}`
+
+4. Dentro de esta se hace el return y se crea la parte que va a tener el html el cual va a tener **JSX** que es html y JavaScript.
+
+```
+const HolaMundo = () => {
+  return (
+    <div>
+
+    </div>
+  );
+}
+```
+
+5. React utiliza clases de css pero la forma de definir una clase no es con el keyword `class`. Se utiliza el keyword `className`, a esta se le va a asignar una clase que se llame `claseCSSHolaMundo` y despues de esto el elmento html
+
+```
+import React from 'react';
+
+const HolaMundo = () => {
+    return (
+      <div className={claseCSSHolaMundo}>
+          <h1>Hola Mundo!</h1>
+      </div>
+    );
+  }
+
+export default HolaMundo;
+```
+
+6. Como el componente que se esta trabajando es **Stateless** y no tiene ciclo de vida ni estado se puede asignar logica donde se cree una variable con un texto y luego pasarlo al componente par esto se crea una constante `Hello= 'Hola Mundo!'`. Para hacer el llamado en el html se puede hacer utilizando llaves y el nombre de la variable `{Hello}`
+
+```
+import React from 'react';
+
+const HolaMundo = () => {
+    const Hello = 'Hola Mundo!';
+    return (
+      <div className="HolaMundo">
+          <h1>{Hello}}</h1>
+      </div>
+    );
+  }
+
+export default HolaMundo;
+```
+
+7. Tambien se puede hacer uso de mas etiquetas html y traerlas como normalmente se haria en un documento que solo tenga estructura html
+
+**Nota:** Toda etiqueta html que se cree dentro del documento debe tener apertura y cierre `< />`
+
+```
+import React from 'react';
+
+const HolaMundo = () => {
+    const Hello = 'Hola Mundo!';
+    return (
+      <div className="HolaMundo">
+          <h1>{Hello}}</h1>
+          <h2>Curso escencial de React Js</h2>
+          <img src="https://arepa.s3.amazonaws.com/react.png" alt="React"/>
+      </div>
+    );
+  }
+
+export default HolaMundo;
+```
+
+8. Se pueden crear validaciones, para esto se crea una constante booleana y dentro de la parte html se crea la logica para saber si se va a mostrar el html o no
+
+**Nota:** La logica debera estar entre corchetes `{}`
+
+Se crea un if ternario que indique que si la variable isTrue es verdadera muestre contenido html de un titulo h4 que diga Esto es verdadero y en caso contrario muestre una etiqueta h5 que diga Soy falso
+
+```
+import React from 'react';
+
+const HolaMundo = () => {
+    const Hello = 'Hola Mundo!';
+    const isTrue= false;
+    return (
+      <div className="HolaMundo">
+          <h1>{Hello}}</h1>
+          <h2>Curso escencial de React Js</h2>
+          <img src="https://arepa.s3.amazonaws.com/react.png" alt="React"/>
+          {isTrue ? <h4>Esto es verdadero</h4> : <h5>Soy Falso</h5> }
+      </div>
+    );
+  }
+
+export default HolaMundo;
+```
+
+9. Guardar el documento con **Ctrl + S**
+
+10. Dentro de la carpeta **src** existe un archivo llamado **index.js** donde se esta importando react y react dom
+
+![assets-git/3.png](assets-git/3.png)
+
+A continuacion dentro del archivo **index.js** importar `import HolaMundo from './components/HolaMundo';` a continuacion de donde se importa `App`
+
+11. Reemplazar App por HolaMundo en:
+
+```
+ReactDOM.render(
+  <React.StrictMode>
+    <HolaMundo />
+  </React.StrictMode>,
+  document.getElementById('root')
+);`ReactDom.render(<HolaMundo>)`
+```
+
+12. Para inicializar la aplicacion ejecutar el comando `npm start` en la terminal
+
+![assets-git/4.png](assets-git/4.png)
+
+13. Si se hace un cambio en la validacion de false por True se carga la logica que se construyo en el componente
+
+```
+import React from 'react';
+
+const HolaMundo = () => {
+    const Hello = 'Hola Mundo!';
+    const isTrue= true;
+    return (
+      <div className="HolaMundo">
+          <h1>{Hello}</h1>
+          <h2>Curso escencial de React Js</h2>
+          <img src="https://arepa.s3.amazonaws.com/react.png" alt="React"/>
+          {isTrue ? <h4>Esto es verdadero</h4> : <h5>Soy Falso</h5> }
+      </div>
+    );
+  }
+
+export default HolaMundo;
+```
+
+![assets-git/5.png](assets-git/5.png)
+
 
 <div align="right">
   <small><a href="#tabla-de-contenido">🡡 volver al inicio</a></small>
