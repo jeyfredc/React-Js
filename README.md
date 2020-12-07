@@ -42,6 +42,11 @@
 
 []()
 
+<div align="right">
+  <small><a href="#tabla-de-contenido">🡡 volver al inicio</a></small>
+</div>
+
+
 ## ¿Qué es React JS?
 
 **React** es una librería desarrollada por Facebook que nos ayuda a construir interfaces de usuario interactivas para todo tipo de aplicaciones: web, móviles o de escritorio.
@@ -60,6 +65,11 @@ El proyecto de este curso se llamara **PlatziVideo**, el cual se viene desarroll
 
 ![assets-git/1.png](assets-git/1.png)
 
+<div align="right">
+  <small><a href="#tabla-de-contenido">🡡 volver al inicio</a></small>
+</div>
+
+
 ## DOM, Virtual DOM y React DOM
 
 El **DOM** es el código HTML que se transforma en páginas web.
@@ -73,3 +83,7 @@ Es una copia exacta del DOM, pero mucho más ligera, ya que los cambios no actua
 Recuerda que los cambios en el Virtual DOM no afectan el HTML que ven los usuarios, así que debemos estar sincronizando constantemente las copias con el DOM. Pero no te preocupes, **React DOM**lo hace por nosotros.
 
 El Virtual DOM ayuda a actualizar informacion que puede cambiar en la pagina sin la necesidad de tener que cargar cosa por cosa, por ejemplo el **feed** de un usuario en Facebook o twitter; Los datos de sesion de usuario, configuracion, etc. ya estan en el DOM y por ejemplo cuando una persona publica una foto o un estado es lo que se carga automaticamente, pero no afecta el resto de datos y permite que la informacion suba de una manera mas rapida y optima sin necesidad de volver a cargar todos los datos de usuario.
+
+<div align="right">
+  <small><a href="#tabla-de-contenido">🡡 volver al inicio</a></small>
+</div>
